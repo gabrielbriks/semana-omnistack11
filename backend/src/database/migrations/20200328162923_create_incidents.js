@@ -1,10 +1,10 @@
 exports.up = function(knex) {
-  return knex.schema.createTable("ongs", function(table) {
+  return knex.schema.createTable("incidents", function(table) {
     table.increments(); // Primary Key, vai gerar de forma automatica esse campo, como 1,2,3,4 e etc.
 
     table.string("title").notNullable();
     table.string("description").notNullable();
-    table.string("value").notNullable();
+    table.decimal("value").notNullable();
 
     //Irá armazenar o Id da ongs;
     table.string("ong_id").notNullable();
@@ -21,5 +21,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.dropTable("incidents");
+  return knex.schema.dropTable("incidents");
 };

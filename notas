@@ -14,3 +14,9 @@ Go back state previous of migration
 Show migrations executeds
   npx knex migrate:status
 
+
+#Dica - Informações de autenticação, de qual usuario está logado em nosso app,
+deve vir no cabeçalho da requisição. Sendo assim, para identificar o o usuario 
+que esta realizando o cadastro de um caso, devemos buscar o id desse usuario no 
+cabeçalho, pois não é uma boa pratica mandar esse id pelos paramtro ou no corpo da 
+requisição.
