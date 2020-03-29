@@ -20,3 +20,5 @@ deve vir no cabeçalho da requisição. Sendo assim, para identificar o o usuari
 que esta realizando o cadastro de um caso, devemos buscar o id desse usuario no 
 cabeçalho, pois não é uma boa pratica mandar esse id pelos paramtro ou no corpo da 
 requisição.
+
+#Dica - Durante o projeto foi usado um package de icons chamada de "fathericons".
