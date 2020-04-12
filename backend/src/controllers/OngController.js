@@ -1,9 +1,9 @@
-const connection = require("../database/conection");
-const crypto = require("crypto");
+const connection = require('../database/conection');
+const crypto = require('crypto');
 
 module.exports = {
   async index(req, res) {
-    const ongs = await connection("ongs").select("*");
+    const ongs = await connection('ongs').select('*');
 
     return res.json(ongs);
   },
@@ -14,17 +14,17 @@ module.exports = {
     /*
       Gerando 'id' aleatorio de 4 caracteres.  
     */
-    const id = crypto.randomBytes(4).toString("HEX");
+    const id = crypto.randomBytes(4).toString('HEX');
 
-    await connection("ongs").insert({
+    await connection('ongs').insert({
       id,
       name,
       email,
       whatsapp,
       city,
-      uf
+      uf,
     });
 
     return res.json({ id });
-  }
+  },
 };
