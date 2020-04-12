@@ -1,12 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FiLogIn } from "react-icons/fi";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FiLogIn } from 'react-icons/fi';
 
-// import '../../global.css'
-import "./styles.css";
+import api from '../../services/api';
 
-import logoImg from "../../assets/logo.svg";
-import heroesImg from "../../assets/heroes.png";
+import './styles.css';
+
+import logoImg from '../../assets/logo.svg';
+import heroesImg from '../../assets/heroes.png';
 
 export default function Logon() {
   return (
