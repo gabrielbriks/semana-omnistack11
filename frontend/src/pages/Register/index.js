@@ -1,30 +1,39 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FiArrowLeft } from "react-icons/fi";
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
 
-import api from "../../services/api";
-import "./styles.css";
+import api from '../../services/api';
+import './styles.css';
 
-import logoImg from "../../assets/logo.svg";
+import logoImg from '../../assets/logo.svg';
 
 export default function Register() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [whatsapp, setWhatsapp] = useState();
-  const [city, setCity] = useState();
-  const [uf, setUf] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [city, setCity] = useState('');
+  const [uf, setUf] = useState('');
+  /*
+    Utilizamos esse cara abaixo em momentos em que não podemos ou até quando não quisermos
+    usar o "Link" para redirecionameto ou para navegtação entre as routes.  
+  */
+  const history = useHistory();
 
   async function handleRegister(e) {
+    e.preventDefault();
+    console.log(e);
+
     const data = { name, email, whatsapp, city, uf };
     console.log(data);
     if (!data) return Error;
     try {
-      const response = await api.post("/ongs", data);
+      const response = await api.post('ongs', data);
       alert(`Seu ID de acesso: ${response.data.id}`);
+
+      history.push('/');
     } catch (err) {
-      alert("Erro no cadastro tente novamente.");
+      alert('Erro no cadastro tente novamente.');
     }
-    e.preventDefault();
   }
 
   return (
@@ -47,30 +56,30 @@ export default function Register() {
           <input
             placeholder="Nome da ONG"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={e => setName(e.target.value)}
           />
           <input
             type="email"
             placeholder="E-mail"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
           />
           <input
             placeholder="WathsApp"
             value={whatsapp}
-            onChange={(e) => setWhatsapp(e.target.value)}
+            onChange={e => setWhatsapp(e.target.value)}
           />
           <div className="input-group">
             <input
               placeholder="Cidade"
               value={city}
-              onChange={(e) => setCity(e.target.value)}
+              onChange={e => setCity(e.target.value)}
             />
             <input
               placeholder="UF"
               style={{ width: 80 }}
               value={uf}
-              onChange={(e) => setUf(e.target.value)}
+              onChange={e => setUf(e.target.value)}
             />
           </div>
 
