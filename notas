@@ -22,3 +22,9 @@ cabeçalho, pois não é uma boa pratica mandar esse id pelos paramtro ou no cor
 requisição.
 
 #Dica - Durante o projeto foi usado um package de icons chamada de "fathericons".
+
+#Dica - Utilizar o "Intl" para formatação de de valores na exibição
+
+#Dica - Para ajustar logo e tira-la de baixo da status bar, utilizamos a biblioteca 
+"expo-constants". Comand: expo install expo-constants;
+  -Logo em seguida importamos e usamos na page "Incidents";
