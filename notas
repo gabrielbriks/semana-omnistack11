@@ -28,3 +28,6 @@ requisição.
 #Dica - Para ajustar logo e tira-la de baixo da status bar, utilizamos a biblioteca 
 "expo-constants". Comand: expo install expo-constants;
   -Logo em seguida importamos e usamos na page "Incidents";
+
+#Dica - Implementando acessso ao email pelo app
+ - Para isso utilizaremos uma biblioteca do próprio expo chamada de "expo-mail-composer"
