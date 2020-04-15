@@ -31,3 +31,12 @@ requisição.
 
 #Dica - Implementando acessso ao email pelo app
  - Para isso utilizaremos uma biblioteca do próprio expo chamada de "expo-mail-composer"
+
+
+ #Dica_!Important : 
+    ! - Para formatar valores em nosso app utilizaremos a biblioteca chamada "intl",
+    basta instala-la, Comand "yarn add intl".
+    ! - Deverá importar essa lib em nosso file "App.js", porque assim todo o nosso app 
+    conseguira utiliza-la: "import 'intl' ".
+    ! - Logo em seguida será preciso importar o nosso idioma de dentro dessa lib da 
+    seguinte forma: " import 'intl/locale-data/jsonp/pt-BR' "
