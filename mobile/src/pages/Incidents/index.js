@@ -10,21 +10,43 @@ import styles from './styles';
 export default function Incidents() {
   const [incidents, setIncidents] = useState([]);
   const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
+  const [loading, setLoding] = useState(false);
+
   const navigation = useNavigation();
 
   function navigationToDetail(incident) {
     navigation.navigate('Detail', { incident });
   }
 
-  async function loadIncident() {
-    const response = await api.get('incidents');
+  async function loadIncidents() {
+    if (loading) {
+      return;
+    }
 
-    setIncidents(response.data);
+    if (total > 0 && incidents.length === total) {
+      return;
+    }
+
+    setLoding(true);
+
+    const response = await api.get('incidents', {
+      params: { page },
+    });
+
+    /* Irá continuar carregando para dentro do nosso state, os regiters da proxima page
+      sendo assim não vai ocorrer de existir registros repetidos ou outras situações;
+
+      Forma correta de indexar dois vetores em um só 
+    */
+    setIncidents([...incidents, ...response.data]);
     setTotal(response.headers['x-total-count']);
+    setPage(page + 1);
+    setLoding(false);
   }
 
   useEffect(() => {
-    loadIncident();
+    loadIncidents();
   }, []);
 
   return (
@@ -45,7 +67,12 @@ export default function Incidents() {
         data={incidents}
         style={styles.incidentList}
         keyExtractor={incident => String(incident.id)}
-        showsVerticalScrollIndicator={false} /*ocultando barra de rolagem*/
+        // showsVerticalScrollIndicator={false} /*ocultando barra de rolagem*/
+        onEndReached={() => {
+          loadIncidents();
+        }}
+        /*Determina quantos por cento o usuario deve estar para que carregue mais itens da lista*/
+        onEndReachedThreshold={0.2}
         renderItem={({ item: incident }) => (
           <View style={styles.incident}>
             <Text style={styles.incidentProperty}>ONG:</Text>
