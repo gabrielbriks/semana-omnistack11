@@ -12,4 +12,4 @@ app.use(errors());
 /*Para que os erros sejam retiornados de uma forma mais bacana, de uma forma mais tratavel para o nosso app
  */
 
-app.listen(3333);
+module.exports = app;

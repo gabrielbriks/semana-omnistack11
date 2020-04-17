@@ -58,3 +58,9 @@ requisição.
 
       -Integração:São testes para testar um fluxo de uma rota inteira da nossa aplicação.
       Esse teste testa por completo uma funcionalidade.
+
+  Testes de Integração:
+   - Em nossos testes de interção realizaremos chamdas em nossa propria api,
+   e como não é recomendado utilizar o axios para nossos test, utilizaremos
+   uma lib chamada "supertest"; Comand >> "yarn add supertest"
+   - 
