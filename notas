@@ -40,3 +40,21 @@ requisição.
     conseguira utiliza-la: "import 'intl' ".
     ! - Logo em seguida será preciso importar o nosso idioma de dentro dessa lib da 
     seguinte forma: " import 'intl/locale-data/jsonp/pt-BR' "
+
+
+  #Tópicos Avançados:
+  Implementando Validações:
+    - Para isso iremo utilizar um alib chamada de celebrate, que vai nos ajudar a realizar
+    as nossas validações aqui no backend. Comand >> yarn add celebrate
+
+  Iniciando com o JEST:
+    Logo após adiciona-lo ao seu projeto(' yarn add jest');
+    Iremos executar o init do jest >> npx jest --init
+
+    #Tipos de testes com o Jest:
+      - Unitários: Testa um pedaço da aplicação de uma forma muito isolado. Geralmente ele
+      testa uma função que executa lago bem especifico. 
+      Também possuí a característica de que não irá ter nenhum efeito colateral(side effect); 
+
+      -Integração:São testes para testar um fluxo de uma rota inteira da nossa aplicação.
+      Esse teste testa por completo uma funcionalidade.
