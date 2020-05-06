@@ -44,7 +44,7 @@ requisição.
 
   #Tópicos Avançados:
   Implementando Validações:
-    - Para isso iremo utilizar um alib chamada de celebrate, que vai nos ajudar a realizar
+    - Para isso iremo utilizar um a lib chamada de celebrate, que vai nos ajudar a realizar
     as nossas validações aqui no backend. Comand >> yarn add celebrate
 
   Iniciando com o JEST:
