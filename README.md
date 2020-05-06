@@ -74,7 +74,7 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Utilizado na contrução do projeto <a name = "built_using"></a>
 
-- [SQLite](hhttps://www.sqlite.org/index.html) 
+- [SQLite](https://www.sqlite.org/index.html) 
 - [KnexJs](http://knexjs.org/)
 - [Express](https://expressjs.com/) 
 - [Jest.js](https://jestjs.io/) 
